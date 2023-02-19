@@ -12,7 +12,12 @@ dotenv.config();
 
 // ==> Conexão com a Base de Dados:
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
+    connectionString: process.env.DATABASE_URL || "postgres://postgres:brasil1982@localhost:5432/employee-api"
+});
+
+pool.on('error', (err, client) => {
+    console.error('Unexected error on idle client', err)
+    process.exit(-1);
 });
 
 pool.on('connect', () => {
