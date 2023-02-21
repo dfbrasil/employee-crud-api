@@ -1,5 +1,6 @@
 import VueSweetaler2 from 'vue-sweetalert2';
 import { createApp } from 'vue';
+import Vuelidate from 'vuelidate';
 import App from './App.vue';
 import router from './router';
 

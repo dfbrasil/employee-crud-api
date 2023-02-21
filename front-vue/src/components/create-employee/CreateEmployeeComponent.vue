@@ -2,47 +2,71 @@
   <div class="container">
     <div class="card">
       <div class="card-header">
-          <h3>Add Employee</h3>
+        <h3>Add Employee</h3>
       </div>
       <div class="card-body">
-      <form @submit.prevent="HandleSubmitForm()">
+      <form v-on:submit.prevent="handleSubmitForm()">
 
-        <!-- INICIO BLOCO: Employee name -->
+        <!-- INÍCIO BLOCO: Employee Name -->
         <div class="form-group">
           <label class="font-weight-bold">Employee Name</label>
-          <input type="text" class="form-control" placeholder="Employee Name" v-model="employee.name" required>
+          <input type="text"
+            class="form-control"
+            placeholder="Type Your Name"
+            v-model="employee.name" required
+          >
         </div>
-        <!-- FIM BLOCO: Employee name -->
+        <!-- FIM BLOCO: Employee Name -->
 
-        <!-- INICIO BLOCO: Job Hole -->
+        <!-- INÍCIO BLOCO: Job Role -->
         <div class="form-group">
           <label class="font-weight-bold">Job Role</label>
-          <input type="text" class="form-control" placeholder="Job Role" v-model="employee.job_role" required>
+          <input type="text"
+            class="form-control"
+            placeholder="Type Your Job Role"
+            v-model="employee.job_role"
+            required
+          >
         </div>
-        <!-- FIM BLOCO: Job Hole -->
+        <!-- FIM BLOCO: Job Role -->
 
-        <!-- INICIO BLOCO: Salary -->
+        <!-- INÍCIO BLOCO: Salary -->
         <div class="form-group">
           <label class="font-weight-bold">Salary</label>
-          <input type="number" class="form-control" placeholder="Salary" v-model="employee.salary" required>
+          <input type="number"
+            class="form-control"
+            placeholder="Type Your Salary"
+            v-model="employee.salary"
+            required
+          >
         </div>
         <!-- FIM BLOCO: Salary -->
 
-        <!-- INICIO BLOCO: birth -->
+        <!-- INÍCIO BLOCO: Birth -->
         <div class="form-group">
           <label class="font-weight-bold">Birth</label>
-          <input type="date" class="form-control" placeholder="YYYY/MM/DD" v-model="employee.birth" required>
+          <input type="date"
+            class="form-control"
+            placeholder="YYYY/MM/DD"
+            v-model="birth"
+            required
+          >
         </div>
-        <!-- FIM BLOCO: birth -->
+        <!-- FIM BLOCO: Birth -->
 
-        <!-- INICIO BLOCO: Employee Registration -->
+        <!-- INÍCIO BLOCO: Employee Registration -->
         <div class="form-group">
           <label class="font-weight-bold">Employee Registration</label>
-          <input type="text" class="form-control" placeholder="Employee Registration" v-model="employee.employee_registration" required>
+          <input type="text"
+            class="form-control"
+            placeholder="Employee Registration"
+            v-model="employee_registration"
+            required
+          >
         </div>
         <!-- FIM BLOCO: Employee Registration -->
         <div class="form-group">
-          <button class="btn-primary" type="submit">ADD employee</button>
+          <button class="btn btn-primary" type="submit">+ Employee</button>
         </div>
       </form>
       </div>
@@ -67,7 +91,7 @@ export default {
     };
   },
   methods: {
-    HandleSubmitForm() {},
+    handleSubmitForm() {},
   },
 };
 </script>
