@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Nprogress from 'nprogress';
+import NProgress from 'nprogress';
 
 const routes = [
   {
@@ -9,12 +9,12 @@ const routes = [
   },
   {
     path: '/list-employees',
-    name: 'List all Employees',
+    name: 'List All Employees',
     component: () => import('../components/list-employee/ListEmployeeComponent.vue'),
   },
   {
-    path: '/edit-employee:id',
-    name: 'Edit Employees',
+    path: '/edit-employee/:id',
+    name: 'Update Employee',
     component: () => import('../components/edit-employee/EditEmployeeComponent.vue'),
   },
 ];
@@ -25,16 +25,16 @@ const router = createRouter({
 });
 
 router.beforeResolve((to, from, next) => {
-  // Quando houver carregamento de uma página inical, então usar o Nprogress
+  // Quando houver o carregamento de uma págona incial, então usar o NProgress
   if (to.name) {
-    Nprogress.start();
-    next();
+    NProgress.start();
   }
+  next();
 });
 
-router.afterEach(() => {
-  // Completa a animação da rota usando o progressbar
-  Nprogress.done();
+router.afterEach((to, from) => {
+  // Completa a animação da rota usando o progress bar
+  NProgress.done();
 });
 
 export default router;

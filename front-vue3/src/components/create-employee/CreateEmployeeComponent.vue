@@ -66,9 +66,7 @@
         </div>
         <!-- FIM BLOCO: Employee Registration -->
         <div class="form-group">
-          <button class="btn btn-primary">
-            <font-awesome-icon icon="fa-solid fa-user-plus" /> Employee
-          </button>
+          <button class="btn btn-primary" type="submit">+ Employee</button>
         </div>
       </form>
       </div>
